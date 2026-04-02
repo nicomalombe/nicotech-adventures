@@ -1,0 +1,75 @@
+/* 🔥 NAVBAR CONTAINER */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: #0d1b2a;
+  color: white;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* 🔥 LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+/* LOGO IMAGE */
+.logo img {
+  height: 75px;
+  object-fit: contain;
+}
+
+/* 🔥 NAV LINKS */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+/* LIST ITEMS */
+.navbar ul li {
+  margin-left: 0; /* removed extra spacing (we use gap instead) */
+}
+
+/* 🔥 LINKS */
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+/* 🔥 HOVER EFFECT */
+.navbar a:hover {
+  color: #3b82f6;
+}
+
+/* 🔥 ACTIVE LINK (OPTIONAL) */
+.navbar a.active {
+  border-bottom: 2px solid #3b82f6;
+  padding-bottom: 4px;
+}
+
+/* 🔥 RESPONSIVE (MOBILE) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .navbar ul li {
+    margin: 10px 0;
+  }
+}

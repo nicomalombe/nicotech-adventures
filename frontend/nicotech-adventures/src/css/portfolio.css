@@ -1,0 +1,62 @@
+/* 🔥 PAGE */
+.portfolio-page {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+/* SUBTITLE */
+.subtitle {
+  margin-bottom: 30px;
+  color: #555;
+}
+
+/* 🔥 GRID */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+/* 🔥 CARD */
+.portfolio-card {
+  position: relative;
+  background: white;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* TITLE */
+.portfolio-card h3 {
+  z-index: 2;
+  position: relative;
+}
+
+/* 🔥 HOVER EFFECT */
+.portfolio-card:hover {
+  transform: translateY(-8px);
+}
+
+/* 🔥 OVERLAY */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 58, 138, 0.9);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+
+  opacity: 0;
+  transition: 0.3s ease;
+}
+
+/* SHOW OVERLAY ON HOVER */
+.portfolio-card:hover .overlay {
+  opacity: 1;
+}

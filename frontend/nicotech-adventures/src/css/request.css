@@ -1,0 +1,70 @@
+/* Container */
+.request-container {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f7fb;
+  padding: 40px 20px;
+}
+
+/* Title */
+.request-title {
+  font-size: 32px;
+  margin-bottom: 20px;
+  color: #1e2a38;
+}
+
+/* Form */
+.request-form {
+  background: #ffffff;
+  padding: 30px;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Inputs */
+.request-form input,
+.request-form textarea {
+  margin-bottom: 15px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* Focus effect */
+.request-form input:focus,
+.request-form textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Textarea */
+.request-form textarea {
+  min-height: 100px;
+  resize: none;
+}
+
+/* Button */
+.request-form button {
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover effect */
+.request-form button:hover {
+  background: #0056b3;
+}
