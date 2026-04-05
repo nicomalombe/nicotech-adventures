@@ -60,42 +60,42 @@ function Services() {
 
     <div className="testimonial-card">
       <p>"Nicotech built our company website beyond expectations."</p>
-      <h4>- James K.</h4>
+      <h4>- James Kimani.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Very professional team and fast delivery!"</p>
-      <h4>- Sarah M.</h4>
+      <h4>- Sarah Mueni.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Their AI solution improved our business operations."</p>
-      <h4>- David O.</h4>
+      <h4>- David Odhiambo.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Highly recommend for any tech-related projects."</p>
-      <h4>- Grace N.</h4>
+      <h4>- Grace Nicholas.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Clean UI and excellent system performance."</p>
-      <h4>- Brian T.</h4>
+      <h4>- Brian Tbra.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"They delivered exactly what we needed on time."</p>
-      <h4>- Esther W.</h4>
+      <h4>- Esther Wambua.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Great communication and technical expertise."</p>
-      <h4>- Kevin L.</h4>
+      <h4>- Kevin Lithium.</h4>
     </div>
 
     <div className="testimonial-card">
       <p>"Our mobile app works perfectly thanks to them!"</p>
-      <h4>- Alice P.</h4>
+      <h4>- Alice Paul.</h4>
     </div>
 
   </div>

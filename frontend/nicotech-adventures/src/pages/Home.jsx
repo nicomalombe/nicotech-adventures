@@ -1,11 +1,12 @@
 import "../css/home.css"
 import ServiceCard from "../components/ServiceCard"
 import { Link } from "react-router-dom"
-import useScrollAnimation from "../hooks/useScrollAnimation"  // 🔥 IMPORT
+import useScrollAnimation from "../hooks/useScrollAnimation"  // 🔥 CUSTOM HOOK
 
 function Home() {
 
-  useScrollAnimation() // 🔥 ACTIVATE SCROLL ANIMATION
+  // 🔥 ACTIVATE SCROLL ANIMATION
+  useScrollAnimation()
 
   return (
     <div className="home">
