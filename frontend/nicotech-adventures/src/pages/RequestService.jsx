@@ -17,7 +17,7 @@ function RequestService() {
     e.preventDefault()
 
     try {
-      const res = await fetch("http://localhost:5000/api/request", {
+      const res = await fetch("https://nicotech-adventures.onrender.com/api/request", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
