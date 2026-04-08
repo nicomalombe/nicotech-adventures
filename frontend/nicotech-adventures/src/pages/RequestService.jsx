@@ -1,7 +1,8 @@
 import { useState } from "react"
-import "../css/request.css"   // ✅ IMPORT CSS
+import "../css/request.css"
 
 function RequestService() {
+
   const [form, setForm] = useState({
     name: "",
     email: "",
@@ -9,12 +10,17 @@ function RequestService() {
     description: ""
   })
 
+  // 🔥 Loading state
+  const [loading, setLoading] = useState(false)
+
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+
+    setLoading(true) // 🔥 start loading
 
     try {
       const res = await fetch("https://nicotech-adventures.onrender.com/api/request", {
@@ -29,6 +35,7 @@ function RequestService() {
 
       alert("Request submitted 🚀")
 
+      // 🔄 Reset form after success
       setForm({
         name: "",
         email: "",
@@ -40,6 +47,8 @@ function RequestService() {
       console.error(error)
       alert("Error submitting request ❌")
     }
+
+    setLoading(false) // 🔥 stop loading
   }
 
   return (
@@ -47,6 +56,7 @@ function RequestService() {
       <h2 className="request-title">Request a Service</h2>
 
       <form className="request-form" onSubmit={handleSubmit}>
+
         <input
           name="name"
           placeholder="Your Name"
@@ -80,7 +90,11 @@ function RequestService() {
           required
         />
 
-        <button type="submit">Submit Request</button>
+        {/* 🔥 UPDATED BUTTON */}
+        <button type="submit" disabled={loading}>
+          {loading ? "Sending..." : "Submit Request"}
+        </button>
+
       </form>
     </div>
   )
