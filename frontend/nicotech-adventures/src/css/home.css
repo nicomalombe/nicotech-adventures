@@ -118,3 +118,23 @@
 .cta p {
   margin: 15px 0;
 }
+/* 📱 MOBILE */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  h2 {
+    font-size: 18px;
+  }
+
+  p {
+    font-size: 15px;
+  }
+
+}
