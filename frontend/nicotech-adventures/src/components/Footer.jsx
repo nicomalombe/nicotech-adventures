@@ -1,60 +1,72 @@
-import { FaGithub, FaLinkedin } from "react-icons/fa"
+import "../css/footer.css"
+import { Link } from "react-router-dom"
+import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from "react-icons/fa"
 
 function Footer() {
   return (
-    <footer
-      style={{
-        background: "#0d1b2a",
-        color: "white",
-        padding: "25px 20px",
-        textAlign: "center"
-      }}
-    >
+    <footer className="footer">
 
-      <p>© {new Date().getFullYear()} Nicotech Adventures</p>
+      <div className="footer-container">
 
-      <p style={{ marginTop: "10px" }}>
-        Software Development | AI Systems | Mobile Apps | Data Science
-      </p>
+        {/* 🔹 COMPANY INFO */}
+        <div className="footer-section">
+          <h3>Nicotech Adventures</h3>
+          <p>
+            Building modern web applications, AI systems, mobile apps,
+            and data-driven solutions for businesses.
+          </p>
+        </div>
 
-      {/* 🔥 SOCIAL ICONS */}
-      <div
-        style={{
-          marginTop: "15px",
-          display: "flex",
-          justifyContent: "center",
-          gap: "20px"
-        }}
-      >
+        {/* 🔹 QUICK LINKS */}
+        <div className="footer-section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><Link to="/">Home</Link></li>
+            <li><Link to="/about">About</Link></li>
+            <li><Link to="/services">Services</Link></li>
+            <li><Link to="/portfolio">Portfolio</Link></li>
+            <li><Link to="/contact">Contact</Link></li>
+            <li><Link to="/request">Request</Link></li>
+          </ul>
+        </div>
 
-        {/* GITHUB */}
-        <a
-          href="https://github.com/nicomalombe"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            color: "white",
-            fontSize: "28px",
-            transition: "0.3s"
-          }}
-        >
-          <FaGithub />
-        </a>
+        {/* 🔹 CONTACT INFO */}
+        <div className="footer-section">
+          <h4>Contact</h4>
+          <p><FaEnvelope />nicomalombe4@gmail.com</p>
+          <p><FaPhone /> +254 794334958</p>
+        </div>
 
-        {/* LINKEDIN */}
-        <a
-          href="https://www.linkedin.com/in/nicodemus-malombe-644b37293/"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            color: "white",
-            fontSize: "28px",
-            transition: "0.3s"
-          }}
-        >
-          <FaLinkedin />
-        </a>
+        {/* 🔹 SOCIAL MEDIA */}
+        <div className="footer-section">
+          <h4>Follow Us</h4>
 
+          <div className="social-icons">
+
+            <a
+              href="https://github.com/nicomalombe"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaGithub />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/nicodemus-malombe-644b37293/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin />
+            </a>
+
+          </div>
+        </div>
+
+      </div>
+
+      {/* 🔻 BOTTOM */}
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} Nicotech Adventures. All rights reserved.</p>
       </div>
 
     </footer>
