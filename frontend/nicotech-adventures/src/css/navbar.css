@@ -12,9 +12,10 @@
 }
 
 /* 🔥 LOGO */
-.logo img{
-  height:45px;
-  object-fit:contain;
+.logo img {
+  width: clamp(120px, 20vw, 180px);
+  height: auto;
+   padding: 5px 0;
 }
 
 /* 🔗 NAV LINKS */
@@ -88,6 +89,14 @@
 
   .nav-links li{
     margin:15px 0;
+  }
+
+}
+/* 📱 MOBILE FIX */
+@media (max-width: 768px) {
+
+  .logo img {
+    width: 150px;
   }
 
 }
