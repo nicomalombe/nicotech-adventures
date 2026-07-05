@@ -33,8 +33,6 @@ function Navbar() {
 
         <li><Link to="/services" onClick={() => setMenuOpen(false)}>Services</Link></li>
 
-        <li><Link to="/portfolio" onClick={() => setMenuOpen(false)}>Portfolio</Link></li>
-
         <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contact</Link></li>
 
         <li><Link to="/request" onClick={() => setMenuOpen(false)}>Request</Link></li>

@@ -9,95 +9,204 @@ function RequestService() {
     service: "",
     description: ""
   })
-
-  // 🔥 Loading state
-  const [loading, setLoading] = useState(false)
+const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
-  }
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
 
   const handleSubmit = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
-    setLoading(true) // 🔥 start loading
+    setLoading(true);
 
     try {
-      const res = await fetch("https://nicotech-adventures.onrender.com/api/request", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify(form)
-      })
+      const response = await fetch(
+        "https://nicotech-adventures.onrender.com/api/request",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        }
+      );
 
-      if (!res.ok) throw new Error("Failed")
+      if (!response.ok) {
+        throw new Error("Request failed");
+      }
 
-      alert("Request submitted 🚀")
+      alert("✅ Your project request has been submitted successfully.");
 
-      // 🔄 Reset form after success
       setForm({
-        name: "",
-        email: "",
-        service: "",
-        description: ""
-      })
+       name: "",
+    email: "",
+    service: "",
+    description: ""
+      });
 
     } catch (error) {
-      console.error(error)
-      alert("Error submitting request ❌")
+      console.error(error);
+      alert("❌ Unable to submit your request.");
     }
 
-    setLoading(false) // 🔥 stop loading
-  }
+    setLoading(false);
+  };
 
   return (
-    <div className="request-container">
-      <h2 className="request-title">Request a Service</h2>
+    <div className="request-page">
 
-      <form className="request-form" onSubmit={handleSubmit}>
+      {/* HERO */}
 
-        <input
-          name="name"
-          placeholder="Your Name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
+      <section className="request-hero">
 
-        <input
-          name="email"
-          type="email"
-          placeholder="Your Email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
+        <div className="request-overlay">
 
-        <input
-          name="service"
-          placeholder="Service Needed (e.g Web App, AI System)"
-          value={form.service}
-          onChange={handleChange}
-          required
-        />
+          <div className="request-hero-content">
 
-        <textarea
-          name="description"
-          placeholder="Describe your project..."
-          value={form.description}
-          onChange={handleChange}
-          required
-        />
+            <span className="section-tag">
+              Start Your Project
+            </span>
 
-        {/* 🔥 UPDATED BUTTON */}
-        <button type="submit" disabled={loading}>
-          {loading ? "Sending..." : "Submit Request"}
-        </button>
+            <h1>Request Our Professional Services</h1>
 
-      </form>
+            <p>
+              Whether you need a website, mobile application,
+              AI solution or enterprise software, our experts are
+              ready to help transform your idea into reality.
+            </p>
+
+          </div>
+
+        </div>
+
+      </section>
+
+      {/* CONTENT */}
+
+      <section className="request-container">
+
+        {/* LEFT */}
+
+        <div className="request-info">
+
+          <h2>Why Request a Consultation?</h2>
+
+          <p>
+            Every successful project begins with understanding your
+            goals. Our team will analyze your requirements and provide
+            professional recommendations tailored to your business.
+          </p>
+
+          <div className="feature-card">
+            <h3>💻 Custom Software Development</h3>
+            <p>Tailored software solutions for your organization.</p>
+          </div>
+
+          <div className="feature-card">
+            <h3>📱 Mobile Applications</h3>
+            <p>Professional Android and cross-platform apps.</p>
+          </div>
+
+          <div className="feature-card">
+            <h3>🤖 Artificial Intelligence</h3>
+            <p>Automation, AI assistants and intelligent systems.</p>
+          </div>
+
+          <div className="feature-card">
+            <h3>📊 Data Science & Analytics</h3>
+            <p>Business intelligence and predictive analytics.</p>
+          </div>
+
+        </div>
+
+        {/* FORM */}
+
+        <div className="request-form-container">
+
+          <h2>Project Request Form</h2>
+
+          <form
+            className="request-form"
+            onSubmit={handleSubmit}
+          >
+
+            <input
+              type="text"
+              name="name"
+              placeholder="Full Name"
+              value={form.name}
+              onChange={handleChange}
+              required
+            />
+
+          
+
+            <input
+              type="email"
+              name="email"
+              placeholder="Email Address"
+              value={form.email}
+              onChange={handleChange}
+              required
+            />
+
+            <select
+              name="service"
+              value={form.service}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select a Service</option>
+
+              <option>Web Development</option>
+
+              <option>Mobile App Development</option>
+
+              <option>Artificial Intelligence</option>
+
+              <option>Machine Learning</option>
+
+              <option>Data Science</option>
+
+              <option>Cloud Solutions</option>
+
+              <option>UI/UX Design</option>
+
+              <option>Other</option>
+
+            </select>
+
+           
+            <textarea
+              name="description"
+              rows="7"
+              placeholder="Describe your project requirements..."
+              value={form.description}
+              onChange={handleChange}
+              required
+            />
+
+            <button
+              type="submit"
+              disabled={loading}
+            >
+              {loading
+                ? "Submitting..."
+                : "Submit Project Request"}
+            </button>
+
+          </form>
+
+        </div>
+
+      </section>
+
     </div>
-  )
+  );
 }
 
-export default RequestService
+export default RequestService;

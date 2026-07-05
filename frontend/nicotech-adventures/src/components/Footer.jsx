@@ -33,7 +33,7 @@ function Footer() {
         {/* 🔹 CONTACT INFO */}
         <div className="footer-section">
           <h4>Contact</h4>
-          <p><FaEnvelope />nicomalombe4@gmail.com</p>
+          <p><FaEnvelope /> nicomalombe4@gmail.com</p>
           <p><FaPhone /> +254 794334958</p>
         </div>
 

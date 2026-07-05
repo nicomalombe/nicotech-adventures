@@ -1,70 +1,358 @@
-/* Container */
-.request-container {
-  min-height: 80vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #f4f7fb;
-  padding: 40px 20px;
+/* ======================================================
+   REQUEST SERVICE PAGE
+====================================================== */
+
+.request-page{
+    width:100%;
+    background:#f7faff;
+    overflow:hidden;
 }
 
-/* Title */
-.request-title {
-  font-size: 32px;
-  margin-bottom: 20px;
-  color: #1e2a38;
+/* ======================================================
+   HERO SECTION
+====================================================== */
+
+.request-hero{
+    height:60vh;
+    background:
+    linear-gradient(
+        rgba(8,25,55,.82),
+        rgba(8,25,55,.82)
+    ),
+    url("../assets/request-banner.jpg");
+
+    background-size:cover;
+    background-position:center;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
-/* Form */
-.request-form {
-  background: #ffffff;
-  padding: 30px;
-  width: 100%;
-  max-width: 500px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-  display: flex;
-  flex-direction: column;
+.request-overlay{
+    width:100%;
+    text-align:center;
+    padding:0 20px;
 }
 
-/* Inputs */
+.request-hero-content{
+    max-width:900px;
+    margin:auto;
+    color:white;
+}
+
+.section-tag{
+
+    display:inline-block;
+
+    padding:10px 24px;
+
+    border-radius:40px;
+
+    background:rgba(255,255,255,.15);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    backdrop-filter:blur(10px);
+
+    font-weight:600;
+
+    margin-bottom:25px;
+}
+
+.request-hero-content h1{
+
+    font-size:clamp(2.8rem,5vw,4.8rem);
+
+    font-weight:800;
+
+    margin-bottom:25px;
+}
+
+.request-hero-content p{
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    color:#ececec;
+}
+
+/* ======================================================
+   MAIN CONTENT
+====================================================== */
+
+.request-container{
+
+    display:grid;
+
+    grid-template-columns:1fr 1.2fr;
+
+    gap:60px;
+
+    padding:90px 8%;
+
+}
+
+/* ======================================================
+   LEFT PANEL
+====================================================== */
+
+.request-info h2{
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    color:#0d1b2a;
+}
+
+.request-info>p{
+
+    color:#666;
+
+    line-height:1.8;
+
+    margin-bottom:35px;
+}
+
+.feature-card{
+
+    background:white;
+
+    padding:25px;
+
+    border-radius:18px;
+
+    margin-bottom:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.06);
+
+    transition:.35s;
+}
+
+.feature-card:hover{
+
+    transform:translateY(-6px);
+
+}
+
+.feature-card h3{
+
+    color:#0d6efd;
+
+    margin-bottom:10px;
+}
+
+.feature-card p{
+
+    color:#555;
+
+    line-height:1.7;
+}
+
+/* ======================================================
+   FORM
+====================================================== */
+
+.request-form-container{
+
+    background:white;
+
+    padding:45px;
+
+    border-radius:22px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+.request-form-container h2{
+
+    margin-bottom:30px;
+
+    color:#102542;
+}
+
+.request-form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+}
+
 .request-form input,
-.request-form textarea {
-  margin-bottom: 15px;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: 0.3s;
+.request-form select,
+.request-form textarea{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:1px solid #d8d8d8;
+
+    border-radius:12px;
+
+    outline:none;
+
+    font-size:1rem;
+
+    transition:.3s;
+
+    resize:none;
 }
 
-/* Focus effect */
 .request-form input:focus,
-.request-form textarea:focus {
-  border-color: #007bff;
-  outline: none;
+.request-form select:focus,
+.request-form textarea:focus{
+
+    border-color:#0d6efd;
+
+    box-shadow:0 0 0 4px rgba(13,110,253,.15);
 }
 
-/* Textarea */
-.request-form textarea {
-  min-height: 100px;
-  resize: none;
+.request-form button{
+
+    background:#0d6efd;
+
+    color:white;
+
+    border:none;
+
+    padding:17px;
+
+    border-radius:50px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    transition:.35s;
 }
 
-/* Button */
-.request-form button {
-  padding: 12px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: 0.3s;
+.request-form button:hover{
+
+    background:#0056d6;
+
+    transform:translateY(-4px);
 }
 
-/* Hover effect */
-.request-form button:hover {
-  background: #0056b3;
+.request-form button:disabled{
+
+    background:#6c757d;
+
+    cursor:not-allowed;
+
+    transform:none;
+}
+
+/* ======================================================
+   RESPONSIVE TABLET
+====================================================== */
+
+@media(max-width:992px){
+
+.request-container{
+
+    grid-template-columns:1fr;
+
+}
+
+.request-hero-content h1{
+
+    font-size:3rem;
+
+}
+
+}
+
+/* ======================================================
+   MOBILE
+====================================================== */
+
+@media(max-width:768px){
+
+.request-hero{
+
+    height:50vh;
+
+}
+
+.request-container{
+
+    padding:70px 6%;
+
+}
+
+.request-form-container{
+
+    padding:30px;
+
+}
+
+.request-hero-content h1{
+
+    font-size:2.2rem;
+
+}
+
+.request-hero-content p{
+
+    font-size:1rem;
+
+}
+
+}
+
+/* ======================================================
+   SMALL PHONES
+====================================================== */
+
+@media(max-width:480px){
+
+.request-hero{
+
+    height:45vh;
+
+}
+
+.request-container{
+
+    padding:60px 20px;
+
+}
+
+.request-form-container{
+
+    padding:25px;
+
+}
+
+.request-hero-content h1{
+
+    font-size:1.8rem;
+
+}
+
+.request-hero-content p{
+
+    font-size:.95rem;
+
+}
+
+.section-tag{
+
+    font-size:.8rem;
+
+}
+
+.request-form button{
+
+    width:100%;
+
+}
+
 }
